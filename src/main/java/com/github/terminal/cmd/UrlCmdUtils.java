@@ -60,4 +60,8 @@ public class UrlCmdUtils extends BaseCmdUtils {
         System.out.println("   1. 工具类型参数: -url【u】！");
         System.out.println("   2. 动作类型参数：-decode(d)【解密】| -encode(e)【加密】！");
     }
+
+    public static boolean canDeal(String type) {
+        return "-url".equals(type) || "-u".equals(type);
+    }
 }

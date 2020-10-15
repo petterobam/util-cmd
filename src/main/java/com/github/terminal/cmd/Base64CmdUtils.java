@@ -55,4 +55,8 @@ public class Base64CmdUtils extends BaseCmdUtils {
         System.out.println("   1. 工具类型参数: -base64【b64】！");
         System.out.println("   2. 动作类型参数：-decode(d)【解密】| -encode(e)【加密】！");
     }
+
+    public static boolean canDeal(String type) {
+        return "-base64".equals(type) || "-b64".equals(type);
+    }
 }

@@ -15,4 +15,11 @@ public class BaseCmdUtils {
         }
         return true;
     }
+
+    public static void help() {
+    }
+
+    public static boolean canDeal(String type) {
+        return false;
+    }
 }

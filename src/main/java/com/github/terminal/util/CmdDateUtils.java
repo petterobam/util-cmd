@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  * @author 欧阳洁
  * @date 2020/8/28 14:11
  */
-public class TerminalDateUtils {
+public class CmdDateUtils {
     /**
      * 通过正则式获取查询截止时间
      *

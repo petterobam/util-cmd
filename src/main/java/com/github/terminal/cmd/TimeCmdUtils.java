@@ -1,6 +1,6 @@
 package com.github.terminal.cmd;
 
-import com.github.terminal.util.TerminalDateUtils;
+import com.github.terminal.util.CmdDateUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.Date;
@@ -32,7 +32,7 @@ public class TimeCmdUtils extends BaseCmdUtils {
                     date = new Date();
                 }
                 if (null == date && (params[0].startsWith("-") || params[0].startsWith("+"))) {
-                    date = TerminalDateUtils.getBeforDateOfRegex(params[0]);
+                    date = CmdDateUtils.getBeforDateOfRegex(params[0]);
                 }
                 if (null == date && !NumberUtils.isNumber(params[0])) {
                     System.out.println(" ERROR：[日期指定] 非法，无法识别！");
@@ -43,7 +43,7 @@ public class TimeCmdUtils extends BaseCmdUtils {
                 }
                 String format = params.length < 2 ? "yyyy-MM-dd HH:mm:ss" : params[1].replaceAll("'", "").replaceAll("\"", "");
                 System.out.println(" 格式：" + format);
-                System.out.println(" 格式化的日期：" + TerminalDateUtils.getFormatStr(date, format));
+                System.out.println(" 格式化的日期：" + CmdDateUtils.getFormatStr(date, format));
                 return true;
             case "-stamp":
             case "-s":
@@ -59,23 +59,23 @@ public class TimeCmdUtils extends BaseCmdUtils {
                 }
                 if (null == date) {
                     if ((params[0].startsWith("-") || params[0].startsWith("+"))) {
-                        date = TerminalDateUtils.getBeforDateOfRegex(params[0]);
+                        date = CmdDateUtils.getBeforDateOfRegex(params[0]);
                     }
                 }
                 if (null == date) {
                     String format2 = params[0].replaceAll("'", "").replaceAll("\"", "");
                     if (format2.length() == 10) {
-                        date = TerminalDateUtils.getDate(params[0], "yyyy-MM-dd", null);
+                        date = CmdDateUtils.getDate(params[0], "yyyy-MM-dd", null);
                     }
                     if (format2.length() == 19) {
-                        date = TerminalDateUtils.getDate(params[0], "yyyy-MM-dd HH:mm:ss", null);
+                        date = CmdDateUtils.getDate(params[0], "yyyy-MM-dd HH:mm:ss", null);
                     }
                 }
                 if (null == date) {
                     System.out.println(" ERROR：[日期指定] 非法，无法识别！");
                     return false;
                 }
-                System.out.println(" 识别为：" + TerminalDateUtils.getFormatStr(date, "yyyy-MM-dd HH:mm:ss"));
+                System.out.println(" 识别为：" + CmdDateUtils.getFormatStr(date, "yyyy-MM-dd HH:mm:ss"));
                 System.out.println(" 时间戳：" + date.getTime());
                 return true;
             default:
@@ -90,5 +90,9 @@ public class TimeCmdUtils extends BaseCmdUtils {
         System.out.println("  [time] 日期时间业务！");
         System.out.println("   1. 工具类型参数: -time(t)【日期】！");
         System.out.println("   2. 动作类型参数：-format(f)【格式化】| -stamp(s)【时间戳】！");
+    }
+
+    public static boolean canDeal(String type) {
+        return "-time".equals(type) || "-t".equals(type);
     }
 }
