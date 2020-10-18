@@ -20,7 +20,7 @@ public class MainApp {
      */
     public static void main(String[] args) {
         // args = new String[] {  };
-        args = new String[] { "-h" };
+        // args = new String[] { "-h" };
         // args = new String[] { "-t","-f","now" };
         if (null == args || args.length < 1) {
             System.out.println(" 请传入工具类型参数：-help | -h（帮助）！");

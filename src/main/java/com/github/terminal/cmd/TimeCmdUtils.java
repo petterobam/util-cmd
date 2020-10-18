@@ -24,7 +24,7 @@ public class TimeCmdUtils extends BaseCmdUtils {
             case "-f":
                 System.out.println(" 动作：获得【指定日期】格式化样式");
                 if(params.length < 1){
-                    System.out.println(" 请传入动作相应数量的业务参数：-f [日期指定：now(当前时间)|timestamp(毫秒)|±?d?h?m(前/后几天几时几分)] [格式化：yyyy-MM-dd HH:mm:ss(例子，自定义)]");
+                    System.out.println(" 请传入动作相应数量的参数：-f [日期指定：now(当前时间)|timestamp(毫秒)|±?d?h?m(前/后几天几时几分)] [格式化：yyyy-MM-dd HH:mm:ss(例子，自定义)]");
                     return false;
                 }
                 System.out.println(" 日期指定：" + params[0]);
@@ -49,7 +49,7 @@ public class TimeCmdUtils extends BaseCmdUtils {
             case "-s":
                 System.out.println(" 动作：获得【指定日期】的时间戳");
                 if(params.length < 1){
-                    System.out.println(" 请传入动作相应数量的业务参数：-s [日期指定：now(当前时间)|±?d?h?m(前/后几天几时几分)|格式：yyyy-MM-dd或yyyy-MM-dd HH:mm:ss]");
+                    System.out.println(" 请传入动作相应数量的参数：-s [日期指定：now(当前时间)|±?d?h?m(前/后几天几时几分)|格式：yyyy-MM-dd或yyyy-MM-dd HH:mm:ss]");
                     return false;
                 }
                 System.out.println(" 日期指定：" + params[0]);
@@ -87,7 +87,7 @@ public class TimeCmdUtils extends BaseCmdUtils {
     }
 
     public static void help() {
-        System.out.println("  [time] 日期时间业务！");
+        System.out.println("  [time] 日期时间工具！");
         System.out.println("   1. 工具类型参数: -time(t)【日期】！");
         System.out.println("   2. 动作类型参数：-format(f)【格式化】| -stamp(s)【时间戳】！");
     }

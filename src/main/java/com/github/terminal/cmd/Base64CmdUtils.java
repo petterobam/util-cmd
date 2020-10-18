@@ -20,13 +20,13 @@ public class Base64CmdUtils extends BaseCmdUtils {
             Base64CmdUtils.help();
             return false;
         }
-        System.out.println(" 工具类型：Base64业务【-b64】");
+        System.out.println(" 工具类型：Base64工具【-b64】");
         switch (action) {
             case "-decode":
             case "-d":
                 System.out.println(" 动作：解密Base64");
                 if (params.length < 1) {
-                    System.out.println(" 请传入动作相应的业务参数：-d [encodeUrl]");
+                    System.out.println(" 请传入动作相应的参数：-d [encodeUrl]");
                     return false;
                 }
                 System.out.println(" 加密的Base64：\"" + params[0] + "\"");
@@ -36,7 +36,7 @@ public class Base64CmdUtils extends BaseCmdUtils {
             case "-e":
                 System.out.println(" 动作：加密Base64");
                 if (params.length < 1) {
-                    System.out.println(" 请传入动作相应的业务参数：-e [originUrl]");
+                    System.out.println(" 请传入动作相应的参数：-e [originUrl]");
                     return false;
                 }
                 System.out.println(" 原Base64：\"" + params[0] + "\"");
@@ -51,7 +51,7 @@ public class Base64CmdUtils extends BaseCmdUtils {
     }
 
     public static void help() {
-        System.out.println("  [base64] Base64业务！");
+        System.out.println("  [base64] Base64工具！");
         System.out.println("   1. 工具类型参数: -base64【b64】！");
         System.out.println("   2. 动作类型参数：-decode(d)【解密】| -encode(e)【加密】！");
     }
