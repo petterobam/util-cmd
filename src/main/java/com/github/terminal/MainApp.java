@@ -1,7 +1,7 @@
 package com.github.terminal;
 
 import com.github.terminal.cmd.BaseCmdUtils;
-import com.github.terminal.util.ClassUtil;
+import com.github.terminal.util.CmdClassUtils;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2020/9/23 14:02
  */
 public class MainApp {
-    private static List<Class<? extends BaseCmdUtils>> cmdUtilList =  ClassUtil.getAllSubClass(BaseCmdUtils.class);
+    private static List<Class<? extends BaseCmdUtils>> cmdUtilList =  CmdClassUtils.getAllSubClass(BaseCmdUtils.class);
     /**
      * 命令执行入口
      *
@@ -70,8 +70,8 @@ public class MainApp {
             }
             // util go excute
             for (Class<? extends BaseCmdUtils> c : MainApp.cmdUtilList) {
-                if (Boolean.TRUE.equals(ClassUtil.invokeStaticMethod(c, "canDeal", type))) {
-                    ClassUtil.invokeStaticMethod(c, "excute", action, params);
+                if (Boolean.TRUE.equals(CmdClassUtils.invokeStaticMethod(c, "canDeal", type))) {
+                    CmdClassUtils.invokeStaticMethod(c, "excute", action, params);
                     return;
                 }
             }
@@ -92,7 +92,7 @@ public class MainApp {
         System.out.println(" util [工具类型] [动作类型] [参数...（多个空格分隔，含空格的参数用 \" \" 括起来）]");
         try {
             for (Class<? extends BaseCmdUtils> c : MainApp.cmdUtilList) {
-                ClassUtil.invokeStaticMethod(c, "help");
+                CmdClassUtils.invokeStaticMethod(c, "help");
             }
         } catch (Exception e) {
             e.printStackTrace();

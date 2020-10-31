@@ -12,7 +12,7 @@ import java.util.Date;
  * @author 欧阳洁
  * @date 2020/10/18 13:26
  */
-public class CronCmdUtil extends BaseCmdUtils {
+public class CronCmdUtils extends BaseCmdUtils {
     public static boolean excute(String action, String[] params) {
         if (!BaseCmdUtils.excute(action, params)) {
             TimeCmdUtils.help();

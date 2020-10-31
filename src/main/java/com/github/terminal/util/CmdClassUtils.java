@@ -20,14 +20,14 @@ import java.util.jar.JarFile;
  * @author 欧阳洁
  * @date 2020/10/15 21:55
  */
-public class ClassUtil {
+public class CmdClassUtils {
     public static void main(String[] args) {
         try {
             System.out.println("子类：");
-            for (Class<? extends BaseCmdUtils> c : ClassUtil.getAllSubClass(BaseCmdUtils.class)) {
+            for (Class<? extends BaseCmdUtils> c : CmdClassUtils.getAllSubClass(BaseCmdUtils.class)) {
                 System.out.println(c.getName());
-                ClassUtil.invokeStaticMethod(c, "help");
-                System.out.println(ClassUtil.invokeStaticMethod(c, "canDeal", "-time"));
+                CmdClassUtils.invokeStaticMethod(c, "help");
+                System.out.println(CmdClassUtils.invokeStaticMethod(c, "canDeal", "-time"));
             }
         } catch (Exception e) {
             e.printStackTrace();

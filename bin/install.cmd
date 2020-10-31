@@ -28,6 +28,7 @@ echo @doskey util=java -jar %project_path%target\util-cmd.jar $* >> C:\cmd-alias
 echo "----- register cmd-alias.bat"
 regedit /s cmd-alias.reg
 echo "if [util -help] not useful, please reopen terminal !"
+refreshenv
 pause
 goto exit
 
