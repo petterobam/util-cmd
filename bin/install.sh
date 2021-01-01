@@ -16,6 +16,7 @@ then
 else
   echo "-----> add util alias to profile"
   echo "alias util=java -jar $PROJECT_PATH/target/util-cmd.jar" >> ~/.bash_profile
+  echo "alias util-update=cd $PROJECT_PATH && git pull && mvn package" >> ~/.bash_profile
   source ~/.bash_profile
 fi
 
@@ -26,6 +27,7 @@ then
 else
   echo "-----> add util alias to zsh"
   echo "alias util=java -jar $PROJECT_PATH/target/util-cmd.jar" >> ~/.zshrc
+  echo "alias util-update=cd $PROJECT_PATH && git pull && mvn package" >> ~/.zshrc
   source ~/.zshrc
 fi
 
