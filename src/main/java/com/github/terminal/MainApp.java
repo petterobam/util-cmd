@@ -71,6 +71,10 @@ public class MainApp {
             // util go excute
             for (Class<? extends BaseCmdUtils> c : MainApp.cmdUtilList) {
                 if (Boolean.TRUE.equals(CmdClassUtils.invokeStaticMethod(c, "canDeal", type))) {
+                    if (null == action || null == params || params.length == 0) {
+                        CmdClassUtils.invokeStaticMethod(c, "help");
+                        return;
+                    }
                     CmdClassUtils.invokeStaticMethod(c, "excute", action, params);
                     return;
                 }
