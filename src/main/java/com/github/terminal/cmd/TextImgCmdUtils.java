@@ -11,7 +11,7 @@ import com.github.terminal.util.CmdTextImgUtils;
 public class TextImgCmdUtils extends BaseCmdUtils {
     public static boolean excute(String action, String[] params) {
         if (!BaseCmdUtils.excute(action, params)) {
-            TimeCmdUtils.help();
+            TextImgCmdUtils.help();
             return false;
         }
         System.out.println(" 工具类型：文字图片【-ti】");

@@ -15,7 +15,7 @@ import java.util.Date;
 public class CronCmdUtils extends BaseCmdUtils {
     public static boolean excute(String action, String[] params) {
         if (!BaseCmdUtils.excute(action, params)) {
-            TimeCmdUtils.help();
+            CronCmdUtils.help();
             return false;
         }
         System.out.println(" 工具类型：Corn表达式【-c】");
@@ -63,7 +63,7 @@ public class CronCmdUtils extends BaseCmdUtils {
                 return true;
             default:
                 System.out.println(" 未知动作：" + action);
-                System.out.println(" 支持动作：-expression(d)【表达式】| -description(d)【描述】");
+                System.out.println(" 支持动作：-expression(e)【表达式】| -description(d)【描述】");
                 System.out.println(" 请重试！");
                 return false;
         }
@@ -73,7 +73,7 @@ public class CronCmdUtils extends BaseCmdUtils {
     public static void help() {
         System.out.println("  [cron] Corn表达式工具！");
         System.out.println("   1. 工具类型参数: -cron(c)【Cron】！");
-        System.out.println("   2. 动作类型参数：-expression(d)【表达式】| -description(d)【描述】！");
+        System.out.println("   2. 动作类型参数：-expression(e)【表达式】| -description(d)【描述】！");
     }
 
     public static boolean canDeal(String type) {

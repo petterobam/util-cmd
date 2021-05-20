@@ -11,7 +11,7 @@ import com.github.terminal.util.CmdTextTableUtils;
 public class TextTableCmdUtils extends BaseCmdUtils {
     public static boolean excute(String action, String[] params) {
         if (!BaseCmdUtils.excute(action, params)) {
-            TimeCmdUtils.help();
+            TextTableCmdUtils.help();
             return false;
         }
         System.out.println(" 工具类型：文字表格【-tt】");
