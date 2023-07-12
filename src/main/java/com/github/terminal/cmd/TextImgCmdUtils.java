@@ -52,7 +52,7 @@ public class TextImgCmdUtils extends BaseCmdUtils {
 
     public static void help() {
         System.out.println("  [textImage] 文字图片工具！");
-        System.out.println("   1. 工具类型参数: -textTable(tt)【文字图片】");
+        System.out.println("   1. 工具类型参数: -textImage(ti)【文字图片】");
         System.out.println("   2. 动作类型参数：-file(f)【图片绝对路径】| -url(u)【网络路径】");
         System.out.println("   3. 表达式：-ti [-f|-u] [图片路径]");
     }
